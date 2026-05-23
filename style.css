@@ -54,6 +54,7 @@ nav ul li a:hover{
 /* HERO */
 
 .hero{
+  position:relative;
   min-height:100vh;
   display:flex;
   justify-content:center;
@@ -61,51 +62,59 @@ nav ul li a:hover{
   flex-direction:column;
   text-align:center;
   padding:20px;
+  overflow:hidden;
 }
+
+/* BACKGROUND LOGO */
+
+.hero-background-logo{
+  position:absolute;
+  width:700px;
+  height:700px;
+  border-radius:50%;
+  background:rgba(255,115,0,0.06);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:0;
+  filter:blur(2px);
+}
+
+.hero-background-logo img{
+  width:500px;
+  opacity:0.05;
+  animation:rotateLogo 25s linear infinite;
+}
+
+/* MAIN LOGO */
 
 .hero-logo{
   width:300px;
   animation:glow 3s infinite;
+  z-index:2;
 }
 
-.hero h1{
-  margin-top:20px;
-  font-size:60px;
-  color:#ff7300;
-}
+/* TEXT */
 
-.hero-text{
-  max-width:850px;
-  margin-top:20px;
-  color:#cfcfcf;
-  line-height:1.9;
-}
-
+.hero h1,
+.hero-text,
 .since-box{
-  margin-top:40px;
-  background:#111;
-  border:1px solid #ff7300;
-  padding:25px 50px;
-  border-radius:25px;
+  position:relative;
+  z-index:2;
 }
 
-.since-box h2{
-  color:#aaa;
-}
+/* ANIMATION */
 
-.since-box h3{
-  color:#ff7300;
-  margin-top:10px;
-  font-size:35px;
-}
+@keyframes rotateLogo{
 
-/* TITLE */
+  from{
+    transform:rotate(0deg);
+  }
 
-.title{
-  text-align:center;
-  color:#ff7300;
-  font-size:45px;
-  margin-bottom:50px;
+  to{
+    transform:rotate(360deg);
+  }
+
 }
 
 /* SECTION */
